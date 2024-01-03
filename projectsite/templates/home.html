@@ -1,0 +1,58 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url('{% static 'images/128139.jpg' %}');
+            background-size: cover; /* Adjust the background size to cover the entire body */
+            background-position: center top; /* Center the background image */
+            margin: 0; /* Remove default margin to ensure full coverage */
+            
+            background-repeat: no-repeat;
+        }
+        
+        
+        header {
+            background-color: cornflowerblue;
+            padding: 20px; 
+            text-align: center; 
+            position: relative; 
+        }
+
+        .logo {
+            position: absolute; 
+            top: 10px; 
+            left: 10px;
+            width: 80px; 
+            height: auto; 
+        }
+
+        a { 
+            font-family: 'Courier New', Courier, monospace;
+            color: white; 
+            text-decoration: none;
+            margin: 0 15px; 
+            font-size: 18px; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img class="logo" src="{% static 'images/NBA-Logo-1.jpg' %}" alt="">
+        <a href="{% url 'home' %}" class="btn" id="active"> Home </a>
+        <a href="{% url 'players' %}" class="btn" id="active"> Players </a>
+        <a href="{% url 'career' %}" class="btn" id="active"> Player's Career </a>
+        <a href="{% url 'teams' %}" class="btn" id="active"> Teams </a>
+        <a href="{% url 'brands' %}" class="btn" id="active"> Brands </a>
+    </header>
+
+
+    <center>{% include 'includes/footer.html' %}</center>
+
+</body>
+</html>
